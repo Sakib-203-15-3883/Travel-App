@@ -21,6 +21,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { GlobalContext } from "@/context";
 
 export default function Header() {
+ 
   const { theme } = useTheme();
   const [sticky, setSticky] = useState<boolean>(false);
 
@@ -159,6 +160,8 @@ export default function Header() {
                     </div>
                   </Link>
 
+
+
                   <button
                     className="login-signup ml-100 "
                     onClick={
@@ -167,12 +170,37 @@ export default function Header() {
                             signOut();
                           }
                         : () => {
-                            signIn("github");
+                          signIn("github");
+                          router.push('/login');
+                          
                           }
                     }
                   >
-                    <span>{session !== null ? "Logout" : "Login/Signup"}</span>
+                    <span>{session !== null ? "Logout" : "Login"}</span>
                   </button>
+
+                  <button
+                   className="login-signup ml-100 "
+                   
+                   onClick={
+                    session === null
+                      ? () => {
+                        signIn("github");
+                        router.push('/signup');
+                        }
+                      : () => {
+                        null;
+                        }
+                  }
+                  
+                  > 
+
+                  Signup
+
+
+                  </button>
+
+                  
 
                   <div className="flex gap-3 items-center px-100 ml-1">
                     <ThemeToggler />
