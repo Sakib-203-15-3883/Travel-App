@@ -1,6 +1,6 @@
 //The global state contains information shared by all components in the application such as the authentication status of a user
 
-"use client";
+'use client'
 
 
 import {
@@ -9,15 +9,15 @@ import {
   SetStateAction,
   createContext,
   useState,
-} from "react";
+} from 'react';
 
 
-import { useSession } from "next-auth/react";
+import { useSession } from 'next-auth/react';
 
-import Spinner from "@/components/spinner";
+import Spinner from '@/components/spinner';
 // import { Blog, BlogFormData } from "@/utils/types";
 // import { initialBlogFormData } from "@/utils";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from 'next/navigation';
 
 
 
@@ -75,7 +75,7 @@ export default function GlobalState({ children }: { children: ReactNode }) {
 
   if (session === undefined) return <Spinner />;
 
-  if (session === null && pathname === "/create") router.push("/");
+  if (session === null && pathname === '/create') router.push('/');
 
   return (
     <GlobalContext.Provider
