@@ -1,0 +1,26 @@
+/* RightNavigation.css */
+
+.right-navigation {
+    display: flex;
+    align-items: center;
+    margin-right: 15%;
+  }
+  
+  .search-icon {
+    margin-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .login-signup {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+  }
+  
+  .user-icon {
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
